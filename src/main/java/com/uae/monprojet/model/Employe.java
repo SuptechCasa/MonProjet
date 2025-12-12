@@ -1,5 +1,6 @@
 package com.uae.monprojet.model;
 
+import com.uae.monprojet.dto.EmployeDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,4 +20,8 @@ public class Employe {
     @ManyToOne
     @JoinColumn(name = "departement_id")
     Departement departement;
+
+    public EmployeDTO toDTO(){
+        return new EmployeDTO(this.id,this.nom,this.age,this.photo,this.departement.toDTO());
+    }
 }

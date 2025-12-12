@@ -1,5 +1,6 @@
 package com.uae.monprojet.controller;
 
+import com.uae.monprojet.dto.EmployeDTO;
 import com.uae.monprojet.model.Employe;
 import com.uae.monprojet.service.EmployeService;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ public class EmployeController {
     }
 
     @GetMapping("employes")
-    List<Employe> getAllEmployees() {
+    List<EmployeDTO> getAllEmployees() {
         return employeService.getAllEmployes();
     }
 

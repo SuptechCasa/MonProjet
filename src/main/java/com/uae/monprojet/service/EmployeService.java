@@ -1,5 +1,6 @@
 package com.uae.monprojet.service;
 
+import com.uae.monprojet.dto.EmployeDTO;
 import com.uae.monprojet.model.Employe;
 import com.uae.monprojet.repository.EmployeRepository;
 import jakarta.transaction.Transactional;
@@ -15,8 +16,8 @@ public class EmployeService {
         this.employeRepository = employeRepository;
     }
 
-    public List<Employe> getAllEmployes() {
-        return employeRepository.findAll();
+    public List<EmployeDTO> getAllEmployes() {
+        return employeRepository.findAll().stream().map(Employe::toDTO).toList();
     }
 
     public Employe addEmploye(Employe employe) {

@@ -1,5 +1,6 @@
 package com.uae.monprojet.repository;
 
+import com.uae.monprojet.dto.DepartementDTO;
 import com.uae.monprojet.model.Departement;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
